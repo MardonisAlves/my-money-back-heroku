@@ -1,4 +1,4 @@
-const dotenv = require("dotenv")
+//const dotenv = require("dotenv")
 
 const port = process.env.PORT 
 const bodyParser = require('body-parser')
@@ -12,7 +12,7 @@ server.use(bodyParser.urlencoded({extended : true}))
 server.use(bodyParser.json())
 server.use(AllowCors)
 server.use(queryParser())
-server.use(dotenv.config())
+//server.use(dotenv.config())
 server.listen(port ,function() {
     console.log("BACKEND is running" , port )
 })
