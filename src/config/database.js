@@ -6,7 +6,7 @@ mongoose.Promise = global.Promise
 //const url = process.env.MONGODB_URI ? process.env.MONGODB_URI : 'mongodb//localhost/mymoney'
 //module.exports = mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true})
 
-module.exports = mongoose.connect('mongodb+srv://mardonis:<mardonis>@mymoney.irwor.mongodb.net/<mymoney>?retryWrites=true&w=majority',
+module.exports = mongoose.connect('mongodb+srv://donyalves:<jk8yup02@>@mymoney.irwor.mongodb.net/<mymoney>?retryWrites=true&w=majority',
  {useNewUrlParser: true, useUnifiedTopology: true})
 
 
