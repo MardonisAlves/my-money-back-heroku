@@ -81,7 +81,9 @@ const signup = (req, res, next) => {
             // salvar os dados no banco
             newUser.save(err => {
                 if (err) {
+                    console.log(err)
                     return sendErrorsFromDB(res, err)
+                   
                 } else {
                     login(req, res, next)
                 }

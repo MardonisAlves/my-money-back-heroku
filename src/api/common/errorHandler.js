@@ -10,7 +10,7 @@ const bundle = res.locals.bundle
     }
 }
 const parseErrors = (nodeRestfulErrors) => {
-const errors = ['ola não foi encontrado error']
+const errors = []
 _.forEach(nodeRestfulErrors, error => errors.push(error.message))
 return errors
 }
