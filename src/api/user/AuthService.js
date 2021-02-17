@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const User = require('./user')
 //const env = require('../../.env')
-const env = process.env.authSecret
+const env = process.env.AUTH_SECRET
 
 //regex
 const emailRegex = /\S+@\S+\.\S+/
