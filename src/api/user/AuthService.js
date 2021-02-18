@@ -1,4 +1,3 @@
-
 const _ = require('lodash')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
@@ -40,7 +39,7 @@ const login = (req, res, next) => {
 // validate token
 const validateToken = (req, res, next) => {
     const token = req.body.token || ''
-    jwt.verify(token, env, function (err, decoded) {
+    jwt.verify(token, env.authSecret, function (err, decoded) {
         return res.status(200).send({ valid: !err })
     })
 }
