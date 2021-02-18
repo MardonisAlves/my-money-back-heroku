@@ -81,7 +81,7 @@ const signup = (req, res, next) => {
         } else {
             const newUser = new User({ name, email, password: passwordHash })
             // salvar os dados no banco
-           await newUser.save(err => {
+            newUser.save(err => {
                  
                 if (err) {
                    
