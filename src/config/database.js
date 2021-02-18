@@ -1,21 +1,17 @@
 const mongoose = require('mongoose')
-
 mongoose.Promise = global.Promise
 
-const url = 'mongodb+srv://mardonis:<pacatuba123>@mymoney.yicxv.mongodb.net/mymoney?retryWrites=true&w=majority'
+const url = process.env.MONGODB_URI ? process.env.MONGODB_URI : 'mongodb//localhost/mymoney'
 
-//const url = process.env.MONGODB_URI ? process.env.MONGODB_URI : 'mongodb//localhost/mymoney'
-
-module.exports = mongoose.connect( url, {useNewUrlParser: true,  useUnifiedTopology: true})
-
-
-
-/*
-module.exports = mongoose.connect('mongodb://localhost/mymoney'  , 
-{useNewUrlParser: true, useUnifiedTopology: true})
-*/
-
-
+module.exports = mongoose.connect( 
+	url, {
+		useNewUrlParser: true,  
+		useUnifiedTopology: true
+	}).then(() => {
+		console.log('voce esta conectado')
+	}).catch((Error) => {
+		console.log(Error)
+	})
 
 mongoose.Error.messages.general.required = "O atributo '{PATH}' é obrigatório."
 mongoose.Error.messages.Number.min =
