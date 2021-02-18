@@ -19,7 +19,7 @@ const sendErrorsFromDB = (res, dbErrors) => {
 }
 
 //login
-const login = (req, res, next) => {
+const async login = (req, res, next) => {
     const email = req.body.email || ''
     const password = req.body.password || ''
     User.findOne({ email }, (err, user) => {
@@ -81,7 +81,7 @@ const signup = (req, res, next) => {
         } else {
             const newUser = new User({ name, email, password: passwordHash })
             // salvar os dados no banco
-            newUser.save(err => {
+           await newUser.save(err => {
                  
                 if (err) {
                    
