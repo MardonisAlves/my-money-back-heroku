@@ -4,15 +4,24 @@ constmongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
 const url = process.env.MONGODB_URI ? process.env.MONGODB_URI : 'mongodb//localhost/mymoney'
-module.exports = mongoose.connect(
-    url, 
-    {useNewUrlParser: true, 
+
+module.exports = async () => {
+
+try{
+	mongoose.connect(
+    url,
+    {
+    useNewUrlParser: true, 
     useUnifiedTopology: true ,
-    useCreateIndex: true})
-    .then(() => console.log("Database connected!"))
-    .catch(err => console.log(err))
-
-
+    useCreateIndex: true
+	})
+	console.log("MongoDB is Connected...");
+	
+}catch(err){
+	console.error(err.message);
+    process.exit(1);
+}
+}
 
 mongoose.Error.messages.general.required = "O atributo '{PATH}' é obrigatório."
 mongoose.Error.messages.Number.min =
