@@ -19,7 +19,7 @@ const sendErrorsFromDB = (res, dbErrors) => {
 }
 
 //login
-const async login = (req, res, next) => {
+const  login = (req, res, next) => {
     const email = req.body.email || ''
     const password = req.body.password || ''
     User.findOne({ email }, (err, user) => {
