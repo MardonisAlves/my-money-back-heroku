@@ -1,5 +1,3 @@
-//const dotenv = require("dotenv")
-
 const port = process.env.PORT 
 const bodyParser = require('body-parser')
 const express = require('express')
