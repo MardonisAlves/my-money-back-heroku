@@ -82,7 +82,7 @@ const signup = (req, res, next) => {
             const newUser = new User({ name, email, password: passwordHash })
             // salvar os dados no banco
             newUser.save(err => {
-                 console.log("Aconteceu um errors")
+                 
                 if (err) {
                    
                     return sendErrorsFromDB(res, err)
