@@ -5,6 +5,11 @@ mongoose.Promise = global.Promise
 
 const url = process.env.MONGODB_URI ? process.env.MONGODB_URI : 'mongodb//localhost/mymoney'
 module.exports = mongoose.connect( url,{useNewUrlParser:true,useUnifiedTopology:true})
+.then((res) => {
+	console.log('mongodb conectado')
+}).catch((erro) => {
+	console.log('Ops! tem Error na connexao')
+})
 
 
 
