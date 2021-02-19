@@ -3,8 +3,8 @@ mongoose.Promise = global.Promise
 
 
 
-const url = process.env.MONGODB_URI ? process.env.MONGODB_URI : 'mongodb//localhost/mymoney'
-module.exports = mongoose.connect( url,{useNewUrlParser:true,useUnifiedTopology:true})
+//const url = process.env.MONGODB_URI ? process.env.MONGODB_URI : 'mongodb//localhost/mymoney'
+module.exports = mongoose.connect( process.env.MONGODB_URI,{useNewUrlParser:true,useUnifiedTopology:true})
 .then((res) => {
 	console.log('mongodb conectado')
 }).catch((erro) => {
