@@ -3,11 +3,7 @@ mongoose.Promise = global.Promise
 
 const url = process.env.MONGODB_URI ? process.env.MONGODB_URI : 'mongodb//localhost/mymoney'
 
-module.exports = mongoose.connect( 
-	url, {
-		useNewUrlParser: true,  
-		useUnifiedTopology: true
-	})
+module.exports = mongoose.connect( url,{useNewUrlParser:true,useUnifiedTopology:true})
 
 mongoose.Error.messages.general.required = "O atributo '{PATH}' é obrigatório."
 mongoose.Error.messages.Number.min =
