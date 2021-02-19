@@ -7,10 +7,6 @@ module.exports = mongoose.connect(
 	url, {
 		useNewUrlParser: true,  
 		useUnifiedTopology: true
-	}).then(() => {
-		console.log('voce esta conectado')
-	}).catch((Error) => {
-		console.log(Error)
 	})
 
 mongoose.Error.messages.general.required = "O atributo '{PATH}' é obrigatório."
