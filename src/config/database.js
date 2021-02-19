@@ -8,7 +8,7 @@ module.exports = mongoose.connect( url,{useNewUrlParser:true,useUnifiedTopology:
 .then((res) => {
 	console.log('mongodb conectado')
 }).catch((erro) => {
-	console.log(Error)
+	console.log(erro)
 })
 
 
